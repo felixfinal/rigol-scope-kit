@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "profile_id": "passive-10x",
+  "version": "1.0.0",
+  "title": "10x passive probe baseline",
+  "description": "Initial project baseline, not a factory reset or a claim of universal suitability. Range, timebase and trigger level preserve live values unless the caller overrides them.",
+  "assumptions": [
+    "Physical probe attenuation is 10x",
+    "Inputs are intended for high-impedance probing",
+    "Caller supplies expected signal and decides capture adjustments"
+  ],
+  "supported_models": [
+    "MHO934",
+    "MHO954",
+    "MHO984"
+  ],
+  "defaults": {
+    "channel_defaults": {
+      "enabled": true,
+      "probe_ratio": 10.0,
+      "impedance": "1M",
+      "coupling": "DC",
+      "bandwidth_limit": "OFF"
+    },
+    "acquisition": {
+      "type": "NORM",
+      "averages": 2,
+      "memory_depth": 1000000
+    },
+    "trigger": {
+      "kind": "edge",
+      "channel": "first_selected",
+      "slope": "POS",
+      "sweep": "NORM",
+      "condition": "greater",
+      "polarity": "POS",
+      "lower_s": 1e-09,
+      "upper_s": 10.0
+    },
+    "capture": {
+      "mode": "RAW",
+      "points": "record",
+      "start": 1,
+      "chunk_points": 100000,
+      "wait_s": 3.0,
+      "max_bytes": 268435456,
+      "screenshot": true
+    }
+  }
+}

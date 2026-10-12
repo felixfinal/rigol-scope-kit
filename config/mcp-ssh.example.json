@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "rigol-scope": {
+      "command": "ssh",
+      "args": [
+        "-T",
+        "-o",
+        "BatchMode=yes",
+        "-o",
+        "ConnectTimeout=8",
+        "scope-host",
+        "/absolute/path/to/rigol-scope-kit/.venv/bin/rigol-scope-mcp",
+        "--config",
+        "/absolute/path/to/devices.toml"
+      ]
+    }
+  }
+}

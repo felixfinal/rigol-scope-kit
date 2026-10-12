@@ -1,0 +1,14 @@
+schema_version = 1
+# Relative state_dir is resolved against this file; omit to use XDG_STATE_HOME.
+# state_dir = "./state"
+# Operator-owned measurement profiles; default is profiles beside this config.
+# profiles_dir = "./profiles"
+
+[devices.bench-scope]
+host = "192.0.2.10" # Replace with the actual instrument address.
+port = 5555 # Confirm using the instrument Welcome page.
+model = "MHO954"
+serial = "" # Run identify once, then pin the serial before other operations.
+timeout_s = 5
+operation_timeout_s = 30
+max_binary_bytes = 8388608

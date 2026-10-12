@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "profile_id": "calibration-ch1-10x",
+  "version": "1.0.0",
+  "title": "CH1 calibration square-wave acceptance",
+  "description": "Explicit bench acceptance profile for the scope calibration output; do not reuse as an arbitrary DUT profile.",
+  "assumptions": [
+    "CH1 is connected to the calibration square wave through a physical 10x probe",
+    "Expected signal is approximately 1 kHz and 0..3.3 V",
+    "Other channels and AFG outputs are preserved"
+  ],
+  "supported_models": [
+    "MHO954"
+  ],
+  "allowed_capture_channels": [
+    1
+  ],
+  "defaults": {
+    "channel_defaults": {
+      "enabled": true,
+      "probe_ratio": 10.0,
+      "impedance": "1M",
+      "coupling": "DC",
+      "bandwidth_limit": "OFF",
+      "scale_v_div": 1.0,
+      "offset_v": 0.0
+    },
+    "timebase": {
+      "scale_s_div": 0.0005,
+      "offset_s": 0.0
+    },
+    "acquisition": {
+      "type": "NORM",
+      "averages": 2,
+      "memory_depth": 1000000
+    },
+    "trigger": {
+      "kind": "edge",
+      "channel": 1,
+      "level_v": 1.5,
+      "slope": "POS",
+      "sweep": "NORM",
+      "condition": "greater",
+      "polarity": "POS",
+      "lower_s": 1e-09,
+      "upper_s": 10.0
+    },
+    "capture": {
+      "mode": "RAW",
+      "points": "record",
+      "start": 1,
+      "chunk_points": 100000,
+      "wait_s": 3.0,
+      "max_bytes": 268435456,
+      "screenshot": true
+    }
+  }
+}

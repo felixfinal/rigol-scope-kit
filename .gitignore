@@ -1,0 +1,31 @@
+# Runtime data and per-host configuration
+.venv/
+state/
+config/*
+!config/*.example.*
+*.log
+*.bin
+*.png
+*.csv
+*.pdf
+# Build/editor output
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.idea/
+.vscode/
+dist/
+build/
+# Legacy private maintenance scripts and lock format
+/scripts/*
+!/scripts/check_readonly.py
+!/scripts/check_mcp_readonly.py
+/requirements.lock.txt
+# Credentials never belong in this repository
+.env
+.env.*
+*.pem
+*.key

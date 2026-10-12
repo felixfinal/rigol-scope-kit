@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "rigol-scope": {
+      "command": "/absolute/path/to/rigol-scope-kit/.venv/bin/rigol-scope-mcp",
+      "args": [
+        "--config",
+        "/absolute/path/to/devices.toml"
+      ]
+    }
+  }
+}

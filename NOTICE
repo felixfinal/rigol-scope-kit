@@ -1,0 +1,12 @@
+rigol-scope-kit
+
+Selected interface, MCP organization, and Skill packaging patterns are adapted
+from scopebench-mcp 0.3.1 by scopebench-mcp contributors, distributed under
+Apache License 2.0. Source: https://pypi.org/project/scopebench-mcp/0.3.1/
+
+Modifications: MHO900 SCPI driver; strict bounded TCP framing; shared device
+locking and pinned identity; channel, trigger and dual AFG controls; waveform
+capture/export and artifact delivery; offline analysis/timing; versioned
+profiles and contracts; short-lived prepared capture ownership; explicit
+wake/release; CLI/MCP, Chinese Agent Skill, uv packaging and documentation.
+This project is not affiliated with RIGOL. Manufacturer manuals are not included.
